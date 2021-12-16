@@ -1,0 +1,11 @@
+.dropdown-toggle{
+    cursor:pointer
+}
+
+nav{
+    margin-bottom: 20px;
+}
+
+.logout{
+    cursor: pointer;
+}
