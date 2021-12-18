@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import  firebase from 'firebase/compat/app';
 import { type } from 'os';
+import { Observable } from 'rxjs';
 import { UserService } from './user.service';
 
 @Injectable({
@@ -35,7 +36,7 @@ export class AuthService {
     this.afAuth.signOut().then(()=>{localStorage.removeItem('login')});
   }
 
-  getAuthState(){
+  getAuthState():Observable<firebase.User| null>{
     return this.afAuth.authState;
   }
 

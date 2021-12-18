@@ -23,6 +23,10 @@ export class UserService {
     // Persist a document id
     let newUser:User = {'uid':user.uid, 'email':user.email, 'displayName':user.displayName, isAdmin:false}
       this.usersCollection.doc(user.uid).set(newUser);
+  }
 
+   getUser(uid:string):Observable<firebase.firestore.DocumentSnapshot<User>>{
+    let user =  this.afs.collection<User>('users').doc(uid).get(); 
+    return user;
   }
 }
